@@ -1,6 +1,6 @@
 #! /bin/sh
 
-USAGE="fzbat [directory] [pattern]"
+USAGE="fzbat.sh [directory] [pattern]"
 
 # Default setting
 DIR=.
@@ -26,7 +26,7 @@ elif [ $# -eq 2 ]; then
 		exit
 	fi
 else
-	echo $usage
+	echo $USAGE
 	exit
 fi
 

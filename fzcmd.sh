@@ -66,7 +66,9 @@ fi
    
 
 # Execute fd and fzf, and select target file.
-FILE=`fd --type f --type l $PATTERN $DIR | fzf --preview 'bat --color=always --style=header,grid {}'`
+FILE=`fd --type f --type l $PATTERN $DIR | \
+	 fzf --bind ctrl-k:preview-up,ctrl-j:preview-down,ctrl-b:preview-page-up,ctrl-f:preview-page-down,ctrl-a:preview-top,ctrl-e:preview-bottom\
+         --preview 'bat --color=always --style=header,grid {}'`
 
 # Execute command to the file.
 $CMD $FILE
